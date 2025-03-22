@@ -6,11 +6,13 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "lint": "next lint"
   },
   "dependencies": {
     "@kinde-oss/kinde-auth-nextjs": "^2.5.3",
     "@prisma/client": "^6.5.0",
+    "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -32,5 +34,13 @@
     "prisma": "^6.5.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@prisma/client"
+    ],
+    "onlyBuiltDependencies": [
+      "@prisma/client"
+    ]
   }
 }

@@ -20,7 +20,7 @@ model BlogPost {
   imageUrl    String
   authorId    String
   authorName  String
-  authorImage String
+  authorImage String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
