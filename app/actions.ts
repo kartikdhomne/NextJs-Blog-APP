@@ -23,7 +23,7 @@ export async function handleSubmission(formData: FormData) {
       content: content as string,
       imageUrl: url as string,
       authorId: user.id,
-      authorImage: user?.picture as string,
+      authorImage: user.picture as string,
       authorName: user.given_name as string,
     },
   });
