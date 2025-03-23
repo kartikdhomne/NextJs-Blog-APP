@@ -9,7 +9,7 @@ interface IappProps {
     imageUrl: string;
     authorId: string;
     authorName: string;
-    authorImage: string;
+    authorImage?: string;
     createdAt: Date;
     updatedAt: Date;
   };
@@ -41,7 +41,7 @@ export function BlogPostCard({ data }: IappProps) {
             <div className="flex items-center space-x-2">
               <div className="relative size-8 overflow-hidden rounded-full">
                 <Image
-                  src={data?.authorImage}
+                  src={data?.authorImage || ""}
                   alt={data?.authorName}
                   fill
                   className="object-cover"
