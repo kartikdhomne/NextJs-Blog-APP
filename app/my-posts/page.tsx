@@ -15,7 +15,10 @@ async function getData(userId: string) {
     },
   });
 
-  return data;
+  return data.map((item) => ({
+    ...item,
+    authorImage: item.authorImage ?? undefined, // Replace null with undefined
+  }));
 }
 
 export default async function MyPostsRoute() {
