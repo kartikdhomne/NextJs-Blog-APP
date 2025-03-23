@@ -16,9 +16,15 @@ interface IappProps {
 }
 
 export function BlogPostCard({ data }: IappProps) {
+  const nullImage =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ799fyQRixe5xOmxYZc3kAy6wgXGO-GHpHSA&s";
+
   return (
-    <div className="group relative overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md transition-all hover:shadow-lg">
-      <Link href={`/post/${data.id}`} className="block w-full h-full">
+    <div className="group relative overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md transition-all hover:shadow-lg flex flex-col">
+      <Link
+        href={`/post/${data.id}`}
+        className="block w-full h-full flex flex-col"
+      >
         <div className="relative h-72 w-full overflow-hidden">
           <Image
             src={data?.imageUrl}
@@ -28,20 +34,20 @@ export function BlogPostCard({ data }: IappProps) {
           />
         </div>
 
-        <div className="p-4">
+        <div className="p-4 flex flex-col flex-grow">
           <h3 className="mb-2 text-lg font-semibold text-gray-900">
             {data.title}
           </h3>
 
-          <p className="mb-4 text-sm text-gray-600 line-clamp-2">
+          <div className="mb-4 text-sm text-gray-600 line-clamp-2 flex-grow">
             {data.content}
-          </p>
+          </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mt-auto">
             <div className="flex items-center space-x-2">
               <div className="relative size-8 overflow-hidden rounded-full">
                 <Image
-                  src={data?.authorImage || ""}
+                  src={data?.authorImage || nullImage}
                   alt={data?.authorName}
                   fill
                   className="object-cover"

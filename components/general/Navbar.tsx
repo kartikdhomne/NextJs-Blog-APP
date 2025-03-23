@@ -31,7 +31,7 @@ const Navbar = () => {
           </Link>
           <Link
             className="text-lg font-medium hover:text-blue-500 transition-colors"
-            href="/my-posts"
+            href="/dashboard"
           >
             My Blogs
           </Link>

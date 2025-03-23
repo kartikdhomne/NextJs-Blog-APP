@@ -29,5 +29,5 @@ export async function handleSubmission(formData: FormData) {
   });
 
   revalidatePath("/");
-  return redirect("/my-posts");
+  return redirect("/dashbaord");
 }

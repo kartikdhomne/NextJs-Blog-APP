@@ -27,6 +27,9 @@ export default async function IdPage({ params }: { params: Params }) {
   const { id } = await params;
   const data = await getData(id);
 
+  const nullImage =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ799fyQRixe5xOmxYZc3kAy6wgXGO-GHpHSA&s";
+
   return (
     <div className="max-w-3xl mx-auto py-8 px-4">
       <Link className={buttonVariants({ variant: "secondary" })} href="/">
@@ -39,7 +42,7 @@ export default async function IdPage({ params }: { params: Params }) {
           <div className="flex items-center space-x-2">
             <div className="relative size-10 overflow-hidden rounded-full">
               <Image
-                src={data.authorImage}
+                src={data.authorImage || nullImage}
                 alt={data.authorName}
                 fill
                 className="object-cover"
@@ -52,8 +55,8 @@ export default async function IdPage({ params }: { params: Params }) {
               year: "numeric",
               month: "long",
               day: "numeric",
-              hour: "2-digit", 
-              minute: "2-digit", 
+              hour: "2-digit",
+              minute: "2-digit",
               hour12: true,
             }).format(data.createdAt)}
           </p>

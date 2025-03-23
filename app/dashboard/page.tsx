@@ -15,10 +15,7 @@ async function getData(userId: string) {
     },
   });
 
-  return data.map((item) => ({
-    ...item,
-    authorImage: item.authorImage ?? undefined, // Replace null with undefined
-  }));
+  return data;
 }
 
 export default async function MyPostsRoute() {
@@ -32,7 +29,7 @@ export default async function MyPostsRoute() {
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-medium">My Blog Articles</h2>
 
-        <Link className={buttonVariants()} href="/my-posts/create">
+        <Link className={buttonVariants()} href="/dashboard/create">
           Create Post
         </Link>
       </div>
