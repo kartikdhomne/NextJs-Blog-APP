@@ -9,7 +9,7 @@ interface IappProps {
     imageUrl: string;
     authorId: string;
     authorName: string;
-    authorImage?: string;
+    authorImage?: string | null;
     createdAt: Date;
     updatedAt: Date;
   };

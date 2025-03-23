@@ -36,7 +36,13 @@ export default async function MyPostsRoute() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {data.map((item) => (
-          <BlogPostCard data={item} key={item.id} />
+          <BlogPostCard
+            data={{
+              ...item,
+              authorImage: item.authorImage || undefined, // Convert null to undefined
+            }}
+            key={item.id}
+          />
         ))}
       </div>
     </div>
